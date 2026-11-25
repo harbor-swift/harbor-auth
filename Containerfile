@@ -31,8 +31,8 @@ RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
     && apt-get -q update \
     && apt-get -q install -y --no-install-recommends ca-certificates tzdata libjemalloc2 \
     && rm -rf /var/lib/apt/lists/* \
-    && groupadd --gid 10001 auth \
-    && useradd --uid 10001 --gid 10001 --no-create-home --home-dir /app --shell /usr/sbin/nologin auth
+    && groupadd --gid 10001 harbor-auth \
+    && useradd --uid 10001 --gid 10001 --no-create-home --home-dir /app --shell /usr/sbin/nologin harbor-auth
 
 WORKDIR /app
 COPY --from=build --chown=10001:10001 /staging /app
