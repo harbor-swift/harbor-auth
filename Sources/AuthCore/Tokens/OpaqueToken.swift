@@ -1,3 +1,7 @@
+// Copyright (c) 2026 Zaid Rahhawi
+// SPDX-License-Identifier: MIT
+// See LICENSE for license information.
+
 import Crypto
 
 #if canImport(FoundationEssentials)
@@ -27,9 +31,9 @@ package struct OpaqueToken: Sendable {
         let base64 = Data(bytes).base64EncodedString()
         let value =
             base64
-            .replacingOccurrences(of: "+", with: "-")
-            .replacingOccurrences(of: "/", with: "_")
-            .replacingOccurrences(of: "=", with: "")
+            .replacing("+", with: "-")
+            .replacing("/", with: "_")
+            .replacing("=", with: "")
         return OpaqueToken(value: value)
     }
 

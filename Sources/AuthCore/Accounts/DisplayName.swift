@@ -1,8 +1,6 @@
-#if canImport(FoundationEssentials)
-import FoundationEssentials
-#else
-import Foundation
-#endif
+// Copyright (c) 2026 Zaid Rahhawi
+// SPDX-License-Identifier: MIT
+// See LICENSE for license information.
 
 /// The name a person chooses to be shown by, trimmed of surrounding whitespace.
 package struct DisplayName: Hashable, Sendable {
@@ -11,7 +9,7 @@ package struct DisplayName: Hashable, Sendable {
     package let rawValue: String
 
     package init?(_ value: String) {
-        let trimmed = value.trimmingCharacters(in: .whitespacesAndNewlines)
+        let trimmed = value.trimmingWhitespace()
         guard !trimmed.isEmpty, trimmed.count <= Self.maximumLength else {
             return nil
         }

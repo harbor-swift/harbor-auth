@@ -1,8 +1,6 @@
-#if canImport(FoundationEssentials)
-import FoundationEssentials
-#else
-import Foundation
-#endif
+// Copyright (c) 2026 Zaid Rahhawi
+// SPDX-License-Identifier: MIT
+// See LICENSE for license information.
 
 /// An email address, trimmed and lowercased, so one address always reads the same.
 ///
@@ -16,7 +14,7 @@ package struct EmailAddress: Hashable, Sendable {
     package let rawValue: String
 
     package init?(_ value: String) {
-        let normalized = value.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        let normalized = value.trimmingWhitespace().lowercased()
         let parts = normalized.split(separator: "@", omittingEmptySubsequences: false)
         guard
             normalized.count <= Self.maximumLength,
