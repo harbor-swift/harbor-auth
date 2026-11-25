@@ -19,8 +19,8 @@ let package = Package(
         .executable(name: "auth", targets: ["Auth"])
     ],
     dependencies: [
-        .package(url: "file:///Users/zrahawi/Developer/microservices-example/harbor-core", from: "1.0.0"),
-        .package(url: "file:///Users/zrahawi/Developer/microservices-example/harbor-protos", from: "1.0.0"),
+        .package(url: "https://github.com/harbor-swift/harbor-core.git", from: "1.0.0"),
+        .package(url: "https://github.com/harbor-swift/harbor-protos.git", from: "1.0.0"),
         .package(url: "https://github.com/swift-microservices/swift-authentication.git", from: "1.0.0"),
         .package(url: "https://github.com/swift-microservices/swift-authentication-jwt.git", from: "1.1.0"),
         .package(url: "https://github.com/swift-microservices/swift-persistence.git", from: "1.0.0"),

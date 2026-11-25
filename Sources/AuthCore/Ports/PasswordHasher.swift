@@ -1,3 +1,7 @@
+// Copyright (c) 2026 Zaid Rahhawi
+// SPDX-License-Identifier: MIT
+// See LICENSE for license information.
+
 /// What Auth needs to store a password without being able to read it back.
 package protocol PasswordHasher: Sendable {
     func hash(_ password: String) async throws -> String

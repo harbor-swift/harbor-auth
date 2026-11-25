@@ -1,3 +1,7 @@
+// Copyright (c) 2026 Zaid Rahhawi
+// SPDX-License-Identifier: MIT
+// See LICENSE for license information.
+
 /// What a password must be, and how hard its hash is to compute.
 package struct PasswordPolicy: Equatable, Sendable {
     /// bcrypt ignores every byte after the 72nd, so two longer passwords sharing those would both sign in.
